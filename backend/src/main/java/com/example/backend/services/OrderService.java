@@ -38,5 +38,13 @@ public class OrderService {
 	public void deleteOrder(Long id) {
 		repo.deleteById(id);
 	}
+
+	public List<Order> getOrdersByLocation(String location) {
+		return repo.findByLocation(location);
+	}
+
+	public List<Order> getOrdersByMaxPrice(int price) {
+		return repo.findByPriceLessThanEqual(price);
+	}
 }
 
